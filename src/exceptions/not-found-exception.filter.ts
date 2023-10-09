@@ -10,7 +10,7 @@ export class NotFoundExceptionFilter extends BaseExceptionFilter {
 
     response.status(status).json({
       statusCode: status,
-      message: 'Resource not found',
+      message: 'Sorry Resource not found :ccc',
     });
   }
 }
