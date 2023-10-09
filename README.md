@@ -41,7 +41,9 @@ The base URL for the MovieFlix API is `http://localhost:3000` (Replace with your
 
 Authentication is not required for these endpoints.
 
-## Endpoints
+---
+## 🔌🔌Endpoints🔌🔌
+---
 
 ### List Movies
 
@@ -55,6 +57,10 @@ GET /movies
 
 - **Status Code**: 200 OK
 - **Response Body**: List of movies in JSON format.
+
+
+
+
 
 ### Add Movie
 
@@ -77,6 +83,10 @@ Content-Type: application/json
 - **Status Code**: 201 Created
 - **Response Body**: The newly added movie in JSON format.
 
+
+
+
+
 ### Update Movie
 
 - **Endpoint**: `PUT /movies/:id`
@@ -95,6 +105,11 @@ Content-Type: application/json
 - **Status Code**: 200 OK
 - **Response Body**: The updated movie in JSON format.
 
+
+
+
+
+
 ### Delete Movie
 
 - **Endpoint**: `DELETE /movies/:id`
@@ -108,6 +123,11 @@ DELETE /movies/:id
 - **Status Code**: 204 No Content
 - No response body.
 
+
+
+
+
+
 ### List Genres
 
 - **Endpoint**: `GET /genres`
@@ -120,6 +140,11 @@ GET /genres
 
 - **Status Code**: 200 OK
 - **Response Body**: List of genres in JSON format.
+
+
+
+
+
 
 ### Add Genre
 
@@ -140,6 +165,11 @@ Content-Type: application/json
 - **Status Code**: 201 Created
 - **Response Body**: The newly added genre in JSON format.
 
+
+
+
+
+
 ### Delete Genre
 
 - **Endpoint**: `DELETE /genres/:id`
@@ -152,6 +182,11 @@ DELETE /genres/:id
 
 - **Status Code**: 204 No Content
 - No response body.
+
+
+
+
+
 
 ### Search Movies
 
