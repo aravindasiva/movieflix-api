@@ -44,7 +44,7 @@ Authentication is not required for these endpoints.
 ---
 ## 🔌🔌Endpoints🔌🔌
 ---
-
+<br><br><br><br>
 ### List Movies
 
 - **Endpoint**: `GET /movies`
@@ -59,7 +59,7 @@ GET /movies
 - **Response Body**: List of movies in JSON format.
 
 
-
+<br><br><br><br>
 
 
 ### Add Movie
@@ -86,7 +86,7 @@ Content-Type: application/json
 
 
 
-
+<br><br><br><br>
 ### Update Movie
 
 - **Endpoint**: `PUT /movies/:id`
@@ -109,7 +109,7 @@ Content-Type: application/json
 
 
 
-
+<br><br><br><br>
 ### Delete Movie
 
 - **Endpoint**: `DELETE /movies/:id`
@@ -127,7 +127,7 @@ DELETE /movies/:id
 
 
 
-
+<br><br><br><br>
 ### List Genres
 
 - **Endpoint**: `GET /genres`
@@ -145,7 +145,7 @@ GET /genres
 
 
 
-
+<br><br><br><br>
 ### Add Genre
 
 - **Endpoint**: `POST /genres`
@@ -169,7 +169,7 @@ Content-Type: application/json
 
 
 
-
+<br><br><br><br>
 ### Delete Genre
 
 - **Endpoint**: `DELETE /genres/:id`
@@ -186,7 +186,7 @@ DELETE /genres/:id
 
 
 
-
+<br><br><br><br>
 
 ### Search Movies
 
