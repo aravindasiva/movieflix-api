@@ -8,9 +8,9 @@ import { CreateMovieDto, UpdateMovieDto } from './dto/movie.dto';
 export class MoviesService {
     constructor(@InjectModel('Movie') private readonly movieModel: Model<Movie>) { }
 
-    async findAll(): Promise<Movie[]> {
-        return this.movieModel.find().exec();
-    }
+    // async findAll(): Promise<Movie[]> {
+    //     return this.movieModel.find().exec();
+    // }
 
     async create(createMovieDto: CreateMovieDto): Promise<Movie> {
         const createdMovie = new this.movieModel(createMovieDto);
@@ -52,5 +52,10 @@ export class MoviesService {
         const movies = await this.movieModel.find(filter).exec();
 
         return movies;
+    }
+
+    async listMovies(page: number, limit: number): Promise<Movie[]> {
+        const skip = (page - 1) * limit;
+        return this.movieModel.find().skip(skip).limit(limit).exec();
     }
 }

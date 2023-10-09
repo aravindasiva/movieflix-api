@@ -5,30 +5,38 @@ import { Movie } from './interfaces/movie.interface';
 
 @Controller('movies')
 export class MoviesController {
-  constructor(private readonly moviesService: MoviesService) {}
+    constructor(private readonly moviesService: MoviesService) { }
 
-  @Get()
-  async findAll() {
-    return this.moviesService.findAll();
-  }
+    // @Get()
+    // async findAll() {
+    //     return this.moviesService.findAll();
+    // }
 
-  @Post()
-  async create(@Body() createMovieDto: CreateMovieDto) {
-    return this.moviesService.create(createMovieDto);
-  }
+    @Post()
+    async create(@Body() createMovieDto: CreateMovieDto) {
+        return this.moviesService.create(createMovieDto);
+    }
 
-  @Put(':id')
-  async update(@Param('id') id: string, @Body() updateMovieDto: UpdateMovieDto) {
-    return this.moviesService.update(id, updateMovieDto);
-  }
+    @Put(':id')
+    async update(@Param('id') id: string, @Body() updateMovieDto: UpdateMovieDto) {
+        return this.moviesService.update(id, updateMovieDto);
+    }
 
-  @Delete(':id')
-  async remove(@Param('id') id: string) {
-    return this.moviesService.remove(id);
-  }
+    @Delete(':id')
+    async remove(@Param('id') id: string) {
+        return this.moviesService.remove(id);
+    }
 
-  @Get('search')
-  async searchMovies(@Query() queryParams: { title?: string; genre?: string }): Promise<Movie[]> {
-    return this.moviesService.searchMovies(queryParams);
-  }
+    @Get('search')
+    async searchMovies(@Query() queryParams: { title?: string; genre?: string }): Promise<Movie[]> {
+        return this.moviesService.searchMovies(queryParams);
+    }
+
+    @Get()
+    async listMovies(
+        @Query('page') page: number = 1,
+        @Query('limit') limit: number = 10,
+    ): Promise<Movie[]> {
+        return this.moviesService.listMovies(page, limit);
+    }
 }
