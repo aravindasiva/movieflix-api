@@ -1,12 +1,18 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { MoviesController } from './movies/movies.controller';
-import { GenresController } from './genres/genres.controller';
+import { ConfigModule } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
+import { MoviesModule } from './movies/movies.module';
+import { GenresModule } from './genres/genres.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, MoviesController, GenresController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      isGlobal: true,
+    }),
+    MongooseModule.forRoot(process.env.DB_URI),
+    GenresModule,
+    MoviesModule,
+  ],
 })
-export class AppModule {}
+export class AppModule { }
